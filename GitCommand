@@ -1,0 +1,124 @@
+-------------------------------------------------------------------------------=> CLONE THE REPO
+	ayushi@ayushi-VirtualBox:~$ git clone https://github.com/ayush1293/DevOpsPOC
+	Cloning into 'DevOpsPOC'...
+	remote: Enumerating objects: 3, done.
+	remote: Counting objects: 100% (3/3), done.
+	remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (3/3), done.
+-------------------------------------------------------------------------------
+=> CHECK IF THE FILKE STRUCTURE IS PRESENT AS IT IS IN YOUR GITHUB REPO HERE REPO NAME IS DevOpsPOC
+
+	ayushi@ayushi-VirtualBox:~$ ls
+	Desktop     DockerPOC      examples.desktop  shell1.sh          Visits
+	DevOpsPOC   DockerPOC.zip  Music             Systemdetector.py
+	Dir1        Documents      Pictures          Templates
+	Dockerfile  Downloads      Public            Videos
+------------------------------------------------------------------------------
+=> DIVE INTO YOUR LOCAL REPO CREATE A LOCAL BRANCH START DOING CHANGES
+
+ayushi@ayushi-VirtualBox:~$ cd DevOpsPOC/
+------------------------------------------------------------------------------
+ayushi@ayushi-VirtualBox:~/DevOpsPOC$ ls
+README.md
+------------------------------------------------------------------------------
+=>IF YOU HAVE CREATED ANY BRANCH IN YOUR REPO AND WANT TO FETCH IN YOUR BRANCH OR ANY CHANGES ANYONE HAS DONE AND YOU WANT TO PUT IN YOUR LOCAL REPO THEN DO
+	git remote -v
+	origin	https://github.com/ayush1293/DevOpsPOC (fetch)
+	origin	https://github.com/ayush1293/DevOpsPOC (push)
+------------------------------------------------------------------------------
+=> CREATE A LOCAL BRANCH AND SWITCH INTO IT FOR MAKING CHANGES
+	git checkout -b ChangeReadme
+	Switched to a new branch 'ChangeReadme'
+-------------------------------------------------------------------------------
+=> DOING CHANGES IN README FILE 
+ 	vi README.md 
+-------------------------------------------------------------------------------
+=>DO GIT STATUS FOR CHECKING YOUR CHANGES!!
+	git status
+	On branch ChangeReadme
+	Changes not staged for commit:
+  	(use "git add <file>..." to update what will be committed)
+  	(use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   README.md
+	no changes added to commit (use "git add" and/or "git commit -a")
+-------------------------------------------------------------------------------
+=>IF YOU ARE FIRST TIME DOING COMMIT THEN GIT WILL ASK !!
+ commit -a -m "Changed the read me"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ayushi@ayushi-VirtualBox.(none)')
+-------------------------------------------------------------------------------
+=>GIVE USERNAME
+	git config --global user.email "singhayushi3333@gmail.com"
+=> GIVE NAME TO GIT
+	git config --global user.name "Ayushi Singh"
+-------------------------------------------------------------------------------
+=> NOW COMMIT WITH COMMIT MESSAGE
+	git commit -a -m "Changed the read me" #WHERE -a MEANS ALL CHANGES #-m MEANS MESSAGE
+	[ChangeReadme 1f3cceb] Changed the read me
+ 	1 file changed, 1 insertion(+)
+-------------------------------------------------------------------------------
+=> CHECK IF THERE NOTHING LEFT IN YOUR LOCAL BRANCH TO COMMIT
+	git status
+	On branch ChangeReadme
+	nothing to commit, working tree clean
+-------------------------------------------------------------------------------
+=>NOW PUSH TO YOUR ORIGIN REPO
+	git push origin ChangeReadme
+	Username for 'https://github.com': ayush1293
+	Password for 'https://ayush1293@github.com': 
+	Counting objects: 3, done.
+	Delta compression using up to 2 threads.
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (3/3), 379 bytes | 379.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0)
+	remote: 
+	remote: Create a pull request for 'ChangeReadme' on GitHub by visiting:
+	remote:      https://github.com/ayush1293/DevOpsPOC/pull/new/ChangeReadme
+	remote: 
+	To https://github.com/ayush1293/DevOpsPOC
+	 * [new branch]      ChangeReadme -> ChangeReadme
+-------------------------------------------------------------------------------
+=> NOW GO TO YOUR REPO IN BROWSER AND YOU WILL GET OPTION TO CREATE PULL REQUEST THERE FOR BY CLICKING IT YPU WILL CREATE A PULL REQUEST AND IN THAT YOU CAN SEE YOUR DIFFRENCE !!
+-------------------------AMEND COMMIT-----------------------------------------
+=> CHECK WHATS CHNAGED USING FOLLOWING COMMAND 
+	git status
+	On branch AddGitCommandFile
+	Changes not staged for commit:
+  	(use "git add <file>..." to update what will be committed)
+  	(use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   GitCommand
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+=>ADD FILE FOR STAGING
+	 git add GitCommand 
+=>AMEND COMMIT USING THIS COMMAND
+	git commit --amend 
+	[AddGitCommandFile 48b1f55] Git basic Commands file
+	 Date: Tue Aug 4 13:00:34 2020 +0530
+	 1 file changed, 89 insertions(+)
+ 	create mode 100644 GitCommand
+=>PUSH THE AMEND COMMIT FORCEFULLY
+	git push -f origin AddGitCommandFile
+	
+	Username for 'https://github.com': ayush1293
+	Password for 'https://ayush1293@github.com': 
+	Counting objects: 3, done.
+	Delta compression using up to 2 threads.
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 1.71 KiB | 876.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0)
+	To https://github.com/ayush1293/DevOpsPOC
+	+ dfd7667...48b1f55 AddGitCommandFile -> AddGitCommandFile (forced update)
+
