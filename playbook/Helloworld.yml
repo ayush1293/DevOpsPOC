@@ -1,0 +1,20 @@
+---
+- name: This is a hello-world example
+  hosts: ritesh 
+  tasks:
+          #- name: Create a file called '/tmp/testfile.txt' with the content 'hello world'.
+          # copy:
+          #   content: hello worldn
+          #   dest: /tmp/testfile.txt
+          #- shell:
+          #   cmd: rm -rf /tmp/testfile.txt
+          # - name: Install the node js
+          # apt:
+          #       name: node.js
+          #        state: latest
+          - shell:
+                  cmd: cd ~
+                  cmd: curl -sL https://deb.nodesource.com/setup_10.x -o nodesource_setup.sh
+                  cmd: sudo bash nodesource_setup.sh
+                  #cmd: sudo apt install nodejs
+                  #cmd: nodejs -v
