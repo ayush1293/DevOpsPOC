@@ -1,6 +1,8 @@
 # DevOpsPOC
 This repo is for DevOps Training
 Here we will learn Jenkins intigration, Ansible automation, containerization with Docker and kubernetes cluster !!
-DEMO-1
-DEMO-2
-DEMO-3
+--------------------------team city DEMO---------------------------------------------------
+DEMO-1<successfull>
+DEMO-2<successfull>
+DEMO-3<Failed due to unspecified branch>
+DEMO-4
